@@ -3,5 +3,9 @@
     "allow": [
       "Bash(claude-code:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "github"
+  ],
+  "enableAllProjectMcpServers": true
 }
