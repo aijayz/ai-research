@@ -20,6 +20,3 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
-
-# MCP config (contains secrets)
-.mcp.json
