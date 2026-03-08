@@ -3,117 +3,282 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
-backgroundColor: #1a1a2e
-color: white
+backgroundColor: #0a0f1a
+color: #E8ECF1
 style: |
-  /* CSS Variables for consistent theming */
+  /* ═══════════════════════════════════════════════════════════════
+     INSTITUTIONAL FINANCE THEME
+     Professional design for financial audience
+     Clean, sophisticated, data-driven aesthetic
+     ═══════════════════════════════════════════════════════════════ */
+
+  /* CSS Variables - Institutional Color Palette */
   :root {
-    --primary-color: #2D5BFF;
-    --secondary-color: #2C3E50;
-    --accent-color: #F1C40F;
-    --success-color: #4CAF50;
-    --danger-color: #FF6B6B;
-    --warning-color: #FF9800;
-    --info-color: #2196F3;
-    --purple-color: #9C27B0;
-    --background-light: rgba(255, 255, 255, 0.05);
-    --background-medium: rgba(255, 255, 255, 0.1);
-    --background-dark: rgba(255, 255, 255, 0.15);
-    --border-light: rgba(255, 255, 255, 0.2);
-    --border-medium: rgba(255, 255, 255, 0.3);
-    --border-dark: rgba(255, 255, 255, 0.4);
-    --text-primary: white;
-    --text-secondary: rgba(255, 255, 255, 0.85);
-    --text-tertiary: rgba(255, 255, 255, 0.7);
+    /* Primary Colors - Professional Finance */
+    --primary-color: #3B82F6;
+    --secondary-color: #1E3A5F;
+    --accent-color: #D4AF37;
+
+    /* Semantic Colors - Muted & Professional */
+    --success-color: #10B981;
+    --danger-color: #EF4444;
+    --warning-color: #F59E0B;
+    --info-color: #06B6D4;
+    --purple-color: #8B5CF6;
+
+    /* Background System - Layered Depth */
+    --bg-base: #0a0f1a;
+    --bg-elevated: #0f1629;
+    --bg-surface: #162033;
+    --bg-hover: #1c2942;
+
+    /* Border System */
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-default: rgba(255, 255, 255, 0.1);
+    --border-emphasis: rgba(255, 255, 255, 0.15);
+
+    /* Text Hierarchy */
+    --text-primary: #E8ECF1;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Legacy compatibility */
+    --background-light: rgba(255, 255, 255, 0.03);
+    --background-medium: rgba(255, 255, 255, 0.06);
+    --background-dark: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.12);
+    --border-dark: rgba(255, 255, 255, 0.18);
     --card-gap: 0.8rem;
     --card-padding: 0.8rem;
     --border-radius: 8px;
   }
 
-  /* Base typography */
+  /* ─── Base Typography ─── */
   section {
     font-size: 32px;
     padding: 25px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
     font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, var(--bg-base) 0%, #070b14 100%);
   }
-  h1 { font-size: 1.8em; font-weight: 600; }
+
+  /* Page number styling */
+  section::after {
+    color: var(--text-muted);
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+
+  /* ─── Headings ─── */
+  h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
   h2 {
     font-size: 1.5em;
     margin-bottom: 0.5em;
     font-weight: 700;
     padding-bottom: 0.35em;
+    letter-spacing: 0.03em;
     background: linear-gradient(90deg, white 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    position: relative;
-    letter-spacing: 0.03em;
   }
-  h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 30%, transparent 70%);
-    border-radius: 2px;
+
+  h3 {
+    font-size: 1em;
+    margin-bottom: 0.2em;
+    font-weight: 600;
+    color: var(--text-primary);
   }
-  h3 { font-size: 1em; margin-bottom: 0.2em; font-weight: 500; }
-  h4 { font-size: 0.9em; margin-bottom: 0.15em; font-weight: 500; }
+  h4 {
+    font-size: 0.9em;
+    margin-bottom: 0.15em;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  /* ─── Content Elements ─── */
   table { font-size: 0.75em; width: 100%; }
   ul, ol { font-size: 0.8em; line-height: 1.35; }
-  p { font-size: 0.85em; line-height: 1.25; }
-  strong { font-weight: 600; }
-  .small { font-size: 0.72em; }
+  p { font-size: 0.85em; line-height: 1.25; color: var(--text-secondary); }
+  strong { font-weight: 600; color: var(--text-primary); }
+  .small { font-size: 0.72em; color: var(--text-muted); }
 
-  /* Emoji styling */
-  h2::before, h3::before { font-size: 1.2em; }
-  li::marker { font-size: 1.1em; }
-  
-  /* Utility classes */
+  /* ─── Grid Layouts ─── */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
   .grid-auto { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.6rem; align-items: center; }
-  .card { padding: 0.8rem; border-left: 4px solid var(--primary-color); background: var(--background-light); border-radius: 6px; }
-  .card-primary { background: rgba(45, 91, 255, 0.1); border: 2px solid rgba(45, 91, 255, 0.3); }
-  .card-secondary { background: rgba(44, 62, 80, 0.3); border: 2px solid rgba(44, 62, 80, 0.5); }
-  .card-purple { background: rgba(156, 39, 176, 0.1); border: 2px solid rgba(156, 39, 176, 0.3); }
-  .card-success { background: rgba(76, 175, 80, 0.1); border: 2px solid rgba(76, 175, 80, 0.3); }
-  .card-danger { background: rgba(255, 107, 107, 0.1); border: 2px solid rgba(255, 107, 107, 0.3); }
-  .card-info { background: rgba(33, 150, 243, 0.1); border: 2px solid rgba(33, 150, 243, 0.3); }
-  .card-warning { background: rgba(255, 152, 0, 0.1); border: 2px solid rgba(255, 152, 0, 0.3); }
-  
-  .box { 
-    background: linear-gradient(135deg, var(--background-medium), var(--background-light));
-    border: 2px solid var(--border-medium);
-    border-radius: 6px;
-    padding: 0.6rem;
-    margin: 0.4rem 0;
+
+  /* ─── Modern Card System ─── */
+  .card {
+    padding: 0.8rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  .card:hover {
+    border-color: var(--border-default);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Card variants with subtle left accent */
+  .card-primary {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--primary-color);
+  }
+  .card-success {
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--success-color);
+  }
+  .card-danger {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--danger-color);
+  }
+  .card-warning {
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--warning-color);
+  }
+  .card-info {
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--info-color);
+  }
+  .card-purple {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.15) 0%, var(--bg-elevated) 3%);
+    border-left: 3px solid var(--purple-color);
+  }
+  .card-secondary {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+  }
+
+  /* ─── Box Element ─── */
+  .box {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
     text-align: center;
   }
-  
-  .arrow { text-align: center; font-size: 1.3em; opacity: 0.5; margin: 0.2rem 0; }
-  
-  /* Table styles */
-  table { border-collapse: collapse; border-radius: 8px; overflow: hidden; }
+
+  .arrow {
+    text-align: center;
+    font-size: 1.4em;
+    color: var(--text-muted);
+    margin: 0.3rem 0;
+  }
+
+  /* ─── Professional Table Styling ─── */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+  }
   th {
-    background: linear-gradient(135deg, rgba(45, 91, 255, 0.3), rgba(45, 91, 255, 0.15));
-    padding: 0.5rem;
+    background: var(--bg-surface);
+    padding: 0.7rem 0.8rem;
     font-weight: 600;
-    border-bottom: 2px solid rgba(45, 91, 255, 0.4);
+    color: var(--text-primary);
+    text-align: left;
+    border-bottom: 1px solid var(--border-default);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
-  td { padding: 0.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
-  tr:nth-child(odd) { background: rgba(255, 255, 255, 0.01); }
+  td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
   tr:last-child td { border-bottom: none; }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    section { font-size: 24px; padding: 18px; }
-    .grid-2, .grid-3, .grid-auto { grid-template-columns: 1fr; gap: 0.6rem; }
+  tr:hover td { background: var(--bg-hover); }
+
+  /* Zebra striping - subtle */
+  tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+
+  /* ─── Data Highlight Classes ─── */
+  .positive { color: var(--success-color); font-weight: 600; }
+  .negative { color: var(--danger-color); font-weight: 600; }
+  .neutral { color: var(--warning-color); font-weight: 600; }
+  .highlight { color: var(--accent-color); font-weight: 600; }
+
+  /* ─── Metric/KPI Display ─── */
+  .metric {
+    text-align: center;
+    padding: 0.5rem;
   }
+  .metric-value {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1.2;
+  }
+  .metric-label {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.3rem;
+  }
+
+  /* ─── Subtle Animation for Presentations ─── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  /* ─── Responsive Design ─── */
+  @media (max-width: 768px) {
+    section { font-size: 24px; padding: 20px; }
+    .grid-2, .grid-3, .grid-auto { grid-template-columns: 1fr; gap: 0.8rem; }
+  }
+
+  /* ─── Lead/Title Slide Styling ─── */
+  section.lead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  section.lead h1 {
+    font-size: 2.5em;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  section.lead h2 {
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  section.lead h2::before { display: none; }
 ---
 
 <!-- _class: lead -->
@@ -155,34 +320,38 @@ style: |
   margin-top: 1rem;
 }
 .agenda-item {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.12), rgba(45, 91, 255, 0.05));
-  border-left: 4px solid var(--accent-color);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-color);
   border-radius: 6px;
   padding: 0.7rem 0.8rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .agenda-item:hover {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.2), rgba(45, 91, 255, 0.08));
-  transform: translateX(5px);
+  background: var(--bg-surface);
+  border-color: var(--border-default);
+  border-left-color: var(--accent-color);
+  transform: translateX(3px);
 }
 .agenda-number {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 700;
   color: var(--accent-color);
   min-width: 1.2em;
   text-align: center;
   line-height: 1;
+  opacity: 0.9;
 }
 .agenda-content {
   flex: 1;
 }
 .agenda-title {
-  font-size: 0.95em;
-  font-weight: 600;
-  color: white;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--text-primary);
   margin: 0;
   line-height: 1.3;
 }
@@ -271,60 +440,57 @@ style: |
 
 <style scoped>
 .definition-box {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.2), rgba(156, 39, 176, 0.15));
-  border: 3px solid var(--primary-color);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-top: 3px solid var(--accent-color);
   border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-  margin: 0 auto 0.4rem auto;
-  max-width: 80%;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0 0.4rem 0;
+  max-width: 100%;
   text-align: center;
-  box-shadow: 0 3px 12px rgba(45, 91, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 .definition-box h3 {
   margin: 0 0 0.3rem 0;
   font-size: 1.05em;
-  font-weight: 700;
-  color: var(--accent-color);
+  font-weight: 600;
+  color: var(--text-primary);
   line-height: 1.25;
 }
 .analogy {
   font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   margin-top: 0.2rem;
 }
 
 .mechanism-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.45rem;
-  max-width: 85%;
-  margin: 0.4rem auto;
+  gap: 0.6rem;
+  max-width: 100%;
+  margin: 0.4rem 0;
   font-size: 0.75em;
 }
 .mechanism-card {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 2px solid;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
   border-radius: 6px;
-  padding: 0.45rem;
+  padding: 0.5rem 0.6rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .mechanism-card.split {
-  border-color: var(--success-color);
-  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.2);
+  border-left: 3px solid var(--success-color);
 }
 .mechanism-card.customize {
-  border-color: var(--accent-color);
-  box-shadow: 0 2px 6px rgba(241, 196, 15, 0.2);
+  border-left: 3px solid var(--accent-color);
 }
 .mechanism-card.trade {
-  border-color: var(--info-color);
-  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.2);
+  border-left: 3px solid var(--info-color);
 }
 .mechanism-card h4 {
   margin: 0 0 0.25rem 0;
   font-size: 1.05em;
-  font-weight: 700;
+  font-weight: 600;
 }
 .mechanism-card.split h4 { color: var(--success-color); }
 .mechanism-card.customize h4 { color: var(--accent-color); }
@@ -333,45 +499,42 @@ style: |
   margin: 0;
   font-size: 0.9em;
   line-height: 1.2;
-  opacity: 0.85;
+  color: var(--text-secondary);
 }
 
 .comparison-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  max-width: 75%;
-  margin: 0.4rem auto 0 auto;
+  gap: 0.6rem;
+  max-width: 100%;
+  margin: 0.4rem 0 0 0;
   font-size: 0.75em;
 }
 .compare-side {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 2px solid;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
   border-radius: 6px;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   text-align: center;
 }
 .compare-side.tradfi {
-  border-color: rgba(255, 107, 107, 0.6);
-  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.2);
+  border-top: 3px solid var(--danger-color);
 }
 .compare-side.defi {
-  border-color: var(--success-color);
-  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.2);
+  border-top: 3px solid var(--success-color);
 }
 .compare-side h4 {
   margin: 0 0 0.35rem 0;
   font-size: 1.05em;
-  font-weight: 700;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
 }
-.compare-side.tradfi h4 { color: rgba(255, 107, 107, 0.9); }
+.compare-side.tradfi h4 { color: var(--danger-color); }
 .compare-side.defi h4 { color: var(--success-color); }
 .compare-side .item {
   margin: 0.25rem 0;
   font-size: 0.95em;
   line-height: 1.25;
+  color: var(--text-secondary);
 }
 .compare-side .highlight {
   color: var(--accent-color);
@@ -648,41 +811,37 @@ A：是的！只需要：
 <style scoped>
 .value-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.8rem;
-  max-width: 85%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 90%;
   margin: 0 auto;
 }
 .value-card {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
-  border-radius: 8px;
-  padding: 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem 0.8rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
 }
-.value-card.risk {
-  border-color: var(--success-color);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
 }
-.value-card.yield {
-  border-color: var(--accent-color);
-  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.2);
-}
-.value-card.liquidity {
-  border-color: var(--info-color);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
-}
-.value-card.transparency {
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(45, 91, 255, 0.2);
-}
+.value-card.risk::before { background: var(--success-color); }
+.value-card.yield::before { background: var(--accent-color); }
+.value-card.liquidity::before { background: var(--info-color); }
+.value-card.transparency::before { background: var(--primary-color); }
 .value-card h3 {
-  margin: 0 0 0.4rem 0;
-  font-size: 1.05em;
-  font-weight: 700;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0.2rem 0 0.4rem 0;
+  font-size: 1em;
+  font-weight: 600;
 }
 .value-card.risk h3 { color: var(--success-color); }
 .value-card.yield h3 { color: var(--accent-color); }
@@ -690,9 +849,9 @@ A：是的！只需要：
 .value-card.transparency h3 { color: var(--primary-color); }
 .value-card p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.85em;
   line-height: 1.4;
-  opacity: 0.9;
+  color: var(--text-secondary);
 }
 </style>
 
@@ -700,13 +859,13 @@ A：是的！只需要：
 <div class="value-card risk">
 
 ### 风险定制化
-<p>匹配不同风险偏好</p>
+<p>匹配不同投资者的风险偏好</p>
 
 </div>
 <div class="value-card yield">
 
 ### 收益优化
-<p>分离和重组收益来源</p>
+<p>分离与重组收益来源</p>
 
 </div>
 <div class="value-card liquidity">
@@ -808,32 +967,31 @@ Strata的创新点：
 
 <style scoped>
 .diagram {
-  max-width: 75%;
+  max-width: 92%;
   margin: 0.3rem auto;
   font-size: 0.78em;
 }
 .box-strata {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.25), rgba(45, 91, 255, 0.12));
-  border: 3px solid var(--primary-color);
-  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 6px;
   padding: 0.6rem 0.8rem;
   margin: 0.25rem 0;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(45, 91, 255, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 .box-strata h4 {
   margin: 0 0 0.2rem 0;
   color: var(--primary-color);
   font-size: 1.05em;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 600;
 }
 .box-strata p {
   margin: 0;
   font-size: 0.92em;
-  opacity: 0.95;
+  color: var(--text-secondary);
   line-height: 1.3;
-  font-weight: 500;
 }
 .split {
   display: grid;
@@ -842,25 +1000,18 @@ Strata的创新点：
   margin-top: 0.25rem;
 }
 .box-senior {
-  border-color: var(--success-color);
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.25), rgba(76, 175, 80, 0.12));
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  border-left-color: var(--success-color);
 }
 .box-senior h4 { color: var(--success-color); }
 .box-junior {
-  border-color: var(--danger-color);
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 107, 107, 0.12));
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+  border-left-color: var(--danger-color);
 }
 .box-junior h4 { color: var(--danger-color); }
 .diagram-arrow {
   text-align: center;
-  font-size: 1.6em;
-  opacity: 0.7;
+  font-size: 1.4em;
   margin: 0.1rem 0;
-  color: var(--accent-color);
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
+  color: var(--text-muted);
 }
 .diagram ul {
   text-align: left;
@@ -868,45 +1019,198 @@ Strata的创新点：
   margin: 0.2rem 0 0 0;
   padding-left: 1.1em;
   line-height: 1.35;
+  color: var(--text-secondary);
 }
 .diagram li {
   margin: 0.18rem 0;
-  font-weight: 500;
 }
 </style>
 
-<div class="diagram">
-  <div class="box-strata">
-    <h4>底层收益策略</h4>
-    <p>sUSDe、借贷池、RWA收益策略</p>
+<!-- Strata Tranche Mechanism - CSS-based Diagram -->
+<style scoped>
+.strata-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  margin-top: 0.1rem;
+}
+.strata-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.strata-box {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.strata-box.input {
+  background: linear-gradient(135deg, #3B82F6 0%, #1E3A5F 100%);
+  border-left: 3px solid #3B82F6;
+}
+.strata-box.process {
+  background: linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%);
+  border-left: 3px solid #8B5CF6;
+  border-bottom: 2px solid #A78BFA;
+}
+.strata-box h4 {
+  margin: 0;
+  font-size: 0.65em;
+  color: #fff;
+  font-weight: 700;
+}
+.strata-box p {
+  margin: 0.05rem 0 0;
+  font-size: 0.5em;
+  color: rgba(255,255,255,0.85);
+}
+.strata-box .highlight {
+  color: #D4AF37;
+  font-weight: 600;
+  font-size: 0.52em;
+}
+.strata-arrow-down {
+  color: #94A3B8;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.strata-split-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.strata-tranche {
+  width: 165px;
+  padding: 0.25rem 0.35rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.strata-tranche.senior {
+  background: linear-gradient(180deg, #10B981 0%, #047857 100%);
+  border-top: 2px solid #34D399;
+}
+.strata-tranche.junior {
+  background: linear-gradient(180deg, #EF4444 0%, #B91C1C 100%);
+  border-top: 2px solid #F87171;
+}
+.strata-tranche h4 {
+  margin: 0;
+  font-size: 0.65em;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+.strata-tranche-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.08rem;
+}
+.strata-tranche .subtitle {
+  font-size: 0.45em;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  margin-bottom: 0.15rem;
+}
+.strata-tranche ul {
+  margin: 0;
+  padding-left: 0.8rem;
+  font-size: 0.45em;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.25;
+}
+.strata-output {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.5em;
+  font-weight: 600;
+  text-align: center;
+}
+.strata-output.senior {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10B981;
+  color: #10B981;
+}
+.strata-output.junior {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #EF4444;
+  color: #EF4444;
+}
+.strata-legend {
+  font-size: 0.45em;
+  color: #64748B;
+  margin-top: 0.1rem;
+  background: rgba(255,255,255,0.03);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.strata-legend .green { color: #10B981; font-weight: 600; }
+.strata-legend .red { color: #EF4444; font-weight: 600; }
+</style>
+
+<!-- Vertical Flow Layout with Waterfall -->
+<div class="strata-diagram">
+  <!-- Level 1: Input -->
+  <div class="strata-level">
+    <div class="strata-box input">
+      <h4>输入</h4>
+      <p>收益资产</p>
+      <p class="highlight">stETH, sUSDe</p>
+    </div>
   </div>
 
-  <div class="diagram-arrow">↓</div>
+  <!-- Arrow down -->
+  <div class="strata-arrow-down">↓</div>
 
-  <div class="box-strata">
-    <h4>风险分层引擎</h4>
-    <p>智能合约将收益按风险/回报拆分</p>
+  <!-- Level 2: Tranching Engine -->
+  <div class="strata-level">
+    <div class="strata-box process">
+      <h4>分层引擎</h4>
+      <p>智能合约</p>
+      <p>按风险拆分</p>
+    </div>
   </div>
 
-  <div class="diagram-arrow">↓</div>
+  <!-- Arrow down -->
+  <div class="strata-arrow-down">↓</div>
 
-  <div class="split">
-    <div class="box-strata box-senior">
-      <h4>Senior Tranche</h4>
-      <ul>
-        <li>超额抵押保护</li>
-        <li>稳定目标收益</li>
-        <li>优先级偿付</li>
-      </ul>
+  <!-- Level 3: Senior + Junior side by side with output arrows -->
+  <div class="strata-split-row">
+    <div class="strata-tranche-col">
+      <div class="strata-tranche senior">
+        <h4>SENIOR</h4>
+        <div class="subtitle">低风险</div>
+        <ul>
+          <li>稳定 4-6% APY</li>
+          <li>优先偿付</li>
+          <li>优先索赔</li>
+        </ul>
+      </div>
+      <div class="strata-arrow-down" style="color: #10B981;">↓</div>
+      <div class="strata-output senior">Senior 代币</div>
     </div>
-    <div class="box-strata box-junior">
-      <h4>Junior Tranche</h4>
-      <ul>
-        <li>杠杆收益暴露</li>
-        <li>承担尾部风险</li>
-        <li>高风险高回报</li>
-      </ul>
+    <div class="strata-tranche-col">
+      <div class="strata-tranche junior">
+        <h4>JUNIOR</h4>
+        <div class="subtitle">高收益</div>
+        <ul>
+          <li>10-20% APY</li>
+          <li>承担首损</li>
+          <li>剩余收益</li>
+        </ul>
+      </div>
+      <div class="strata-arrow-down" style="color: #EF4444;">↓</div>
+      <div class="strata-output junior">Junior 代币</div>
     </div>
+  </div>
+
+  <!-- Waterfall Legend -->
+  <div class="strata-legend">
+    收益流向 <span class="green">Senior 优先</span> → <span class="red">Junior</span> 获得剩余
   </div>
 </div>
 
@@ -1240,31 +1544,26 @@ Uncapped Upside（上行无限）：
   margin: 0 auto;
 }
 .innovation-card {
-  background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  padding: 0.9rem;
+  padding: 0.8rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 .innovation-card.perpetual {
-  border-color: var(--accent-color);
-  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.2);
+  border-top: 3px solid var(--accent-color);
 }
 .innovation-card.collateral {
-  border-color: var(--success-color);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  border-top: 3px solid var(--success-color);
 }
 .innovation-card.modular {
-  border-color: var(--info-color);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+  border-top: 3px solid var(--info-color);
 }
 .innovation-card h3 {
   margin: 0 0 0.4rem 0;
   font-size: 1.05em;
-  font-weight: 700;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
 }
 .innovation-card.perpetual h3 { color: var(--accent-color); }
 .innovation-card.collateral h3 { color: var(--success-color); }
@@ -1272,8 +1571,8 @@ Uncapped Upside（上行无限）：
 .innovation-card p {
   margin: 0;
   font-size: 0.95em;
-  line-height: 1.4;
-  opacity: 0.9;
+  line-height: 1.35;
+  color: var(--text-secondary);
 }
 </style>
 
@@ -1345,105 +1644,187 @@ PT/YT分离机制：
 
 <style scoped>
 .pendle-diagram {
-  max-width: 75%;
-  margin: 0.3rem auto;
-  font-size: 0.78em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  margin-top: 0.1rem;
+}
+.pendle-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .pendle-box {
-  background: linear-gradient(135deg, rgba(156, 39, 176, 0.25), rgba(156, 39, 176, 0.12));
-  border: 3px solid var(--purple-color);
-  border-radius: 8px;
-  padding: 0.6rem 0.8rem;
-  margin: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.pendle-box.input {
+  background: linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%);
+  border-left: 3px solid #8B5CF6;
+}
+.pendle-box.process {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  border-left: 3px solid #06B6D4;
+  border-bottom: 2px solid #22D3EE;
 }
 .pendle-box h4 {
-  margin: 0 0 0.2rem 0;
-  color: var(--purple-color);
-  font-size: 1.05em;
+  margin: 0;
+  font-size: 0.65em;
+  color: #fff;
   font-weight: 700;
-  letter-spacing: 0.02em;
 }
 .pendle-box p {
-  margin: 0;
-  font-size: 0.92em;
-  opacity: 0.95;
-  line-height: 1.3;
-  font-weight: 500;
+  margin: 0.05rem 0 0;
+  font-size: 0.5em;
+  color: rgba(255,255,255,0.85);
 }
-.pt-box {
-  border-color: var(--info-color);
-  background: linear-gradient(135deg, rgba(33, 150, 243, 0.25), rgba(33, 150, 243, 0.12));
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+.pendle-box .highlight {
+  color: #D4AF37;
+  font-weight: 600;
+  font-size: 0.52em;
 }
-.pt-box h4 { color: var(--info-color); }
-.yt-box {
-  border-color: var(--warning-color);
-  background: linear-gradient(135deg, rgba(255, 152, 0, 0.25), rgba(255, 152, 0, 0.12));
-  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+.pendle-arrow-down {
+  color: #94A3B8;
+  font-size: 0.9em;
+  line-height: 1;
 }
-.yt-box h4 { color: var(--warning-color); }
-.pendle-arrow {
-  text-align: center;
-  font-size: 1.6em;
-  opacity: 0.7;
-  margin: 0.1rem 0;
-  color: var(--accent-color);
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
-}
-.pendle-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.pendle-split-row {
+  display: flex;
   gap: 0.6rem;
-  margin-top: 0.25rem;
+  align-items: flex-start;
+  justify-content: center;
 }
-.pendle-diagram ul {
-  text-align: left;
-  font-size: 0.88em;
-  margin: 0.2rem 0 0 0;
-  padding-left: 1.1em;
-  line-height: 1.35;
+.pendle-token {
+  width: 165px;
+  padding: 0.25rem 0.35rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.pendle-diagram li {
-  margin: 0.18rem 0;
-  font-weight: 500;
+.pendle-token.pt {
+  background: linear-gradient(180deg, #06B6D4 0%, #0891B2 100%);
+  border-top: 2px solid #22D3EE;
 }
+.pendle-token.yt {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
+  border-top: 2px solid #FBBF24;
+}
+.pendle-token h4 {
+  margin: 0;
+  font-size: 0.65em;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+.pendle-token-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.08rem;
+}
+.pendle-token .subtitle {
+  font-size: 0.45em;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  margin-bottom: 0.15rem;
+}
+.pendle-token ul {
+  margin: 0;
+  padding-left: 0.8rem;
+  font-size: 0.45em;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.25;
+}
+.pendle-output {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.5em;
+  font-weight: 600;
+  text-align: center;
+}
+.pendle-output.pt {
+  background: rgba(6, 182, 212, 0.2);
+  border: 1px solid #06B6D4;
+  color: #06B6D4;
+}
+.pendle-output.yt {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid #F59E0B;
+  color: #F59E0B;
+}
+.pendle-legend {
+  font-size: 0.45em;
+  color: #64748B;
+  margin-top: 0.1rem;
+  background: rgba(255,255,255,0.03);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.pendle-legend .cyan { color: #06B6D4; font-weight: 600; }
+.pendle-legend .orange { color: #F59E0B; font-weight: 600; }
 </style>
 
 <div class="pendle-diagram">
-  <div class="pendle-box">
-    <h4>基础生息资产</h4>
-    <p>stETH、sDAI、gDAI、LST、LRT</p>
+  <!-- Level 1: Input -->
+  <div class="pendle-level">
+    <div class="pendle-box input">
+      <h4>输入</h4>
+      <p>生息资产</p>
+      <p class="highlight">stETH, sDAI, LST</p>
+    </div>
   </div>
 
-  <div class="pendle-arrow">↓</div>
+  <!-- Arrow down -->
+  <div class="pendle-arrow-down">↓</div>
 
-  <div class="pendle-box">
-    <h4>Pendle 收益分离</h4>
-    <p>将本金和收益权拆分为独立代币</p>
+  <!-- Level 2: Pendle Protocol -->
+  <div class="pendle-level">
+    <div class="pendle-box process">
+      <h4>PENDLE 协议</h4>
+      <p>收益代币化</p>
+      <p>分离本金 + 收益</p>
+    </div>
   </div>
 
-  <div class="pendle-arrow">↓</div>
+  <!-- Arrow down -->
+  <div class="pendle-arrow-down">↓</div>
 
-  <div class="pendle-split">
-    <div class="pendle-box pt-box">
-      <h4>本金代币 (PT)</h4>
-      <ul>
-        <li>到期赎回本金</li>
-        <li>折现价格交易</li>
-        <li>低波动性</li>
-      </ul>
+  <!-- Level 3: PT + YT side by side with output arrows -->
+  <div class="pendle-split-row">
+    <div class="pendle-token-col">
+      <div class="pendle-token pt">
+        <h4>PT</h4>
+        <div class="subtitle">本金代币</div>
+        <ul>
+          <li>固定收益</li>
+          <li>折价交易</li>
+          <li>低波动性</li>
+        </ul>
+      </div>
+      <div class="pendle-arrow-down" style="color: #06B6D4;">↓</div>
+      <div class="pendle-output pt">到期赎回</div>
     </div>
-    <div class="pendle-box yt-box">
-      <h4>收益代币 (YT)</h4>
-      <ul>
-        <li>获取期间收益</li>
-        <li>收益现值定价</li>
-        <li>高波动性</li>
-      </ul>
+    <div class="pendle-token-col">
+      <div class="pendle-token yt">
+        <h4>YT</h4>
+        <div class="subtitle">收益代币</div>
+        <ul>
+          <li>浮动收益</li>
+          <li>收益敞口</li>
+          <li>高波动性</li>
+        </ul>
+      </div>
+      <div class="pendle-arrow-down" style="color: #F59E0B;">↓</div>
+      <div class="pendle-output yt">收取收益</div>
     </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="pendle-legend">
+    <span class="cyan">PT</span> + <span class="orange">YT</span> = 原始资产（到期时）
   </div>
 </div>
 
@@ -1513,7 +1894,7 @@ PT=保守（Principal），YT=激进（Yield），LP=做市（Liquidity Provider
 }
 .product-card {
   background: linear-gradient(135deg, rgba(156, 39, 176, 0.15), rgba(156, 39, 176, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 8px;
   padding: 0.9rem;
   text-align: center;
@@ -1537,8 +1918,6 @@ PT=保守（Principal），YT=激进（Yield），LP=做市（Liquidity Provider
   margin-top: 1.8rem;
   font-size: 1.1em;
   font-weight: 700;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 .product-card.leverage h3 { color: var(--danger-color); }
 .product-card.spot h3 { color: var(--info-color); }
@@ -1654,7 +2033,7 @@ TradFi结构化产品的共同特点：
 }
 .tradfi-card {
   background: linear-gradient(135deg, rgba(149, 165, 166, 0.15), rgba(149, 165, 166, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 8px;
   padding: 0.8rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -1692,8 +2071,6 @@ TradFi结构化产品的共同特点：
   margin-top: 1.8rem;
   font-size: 1.05em;
   font-weight: 700;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   text-align: center;
 }
 .tradfi-card.notes h3 { color: var(--success-color); }
@@ -1906,7 +2283,7 @@ TradFi结构化产品的共同特点：
 <div class="radar-title">技术能力雷达图</div>
 
 <div class="radar-wrapper">
-  <img src="tech_radar_chart.svg" alt="技术架构雷达图" style="width: 100%; max-width: 936px;">
+  <img src="tech-radar-zh.svg" alt="技术架构雷达图" style="width: 100%; max-width: 936px;">
 </div>
 
 <div class="radar-legend">
@@ -2090,7 +2467,7 @@ TradFi产品：
 .risk-card {
   border-radius: 5px;
   padding: 0.4rem;
-  border: 3px solid;
+  border: 2px solid;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   position: relative;
   background: rgba(255, 255, 255, 0.03);
@@ -2113,7 +2490,6 @@ TradFi产品：
   font-weight: 700;
   text-align: center;
   padding-bottom: 0.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   line-height: 1.2;
 }
 .risk-hero {
@@ -2438,8 +2814,6 @@ TradFi目标用户：
   color: var(--primary-color);
   font-weight: 600;
   text-align: center;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.3rem;
 }
 .user {
   margin: 0.5rem 0;
@@ -2679,7 +3053,7 @@ TradFi：
 /* 关键洞察框 */
 .regulation-insight {
   background: linear-gradient(135deg, rgba(241, 196, 15, 0.25), rgba(241, 196, 15, 0.08));
-  border: 3px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
   padding: 0.6rem 1rem;
   text-align: center;
@@ -3050,7 +3424,7 @@ TradFi增长限制：
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 .pie-center-title {
   font-size: 0.9em;
@@ -3104,12 +3478,10 @@ TradFi增长限制：
   color: var(--primary-color);
   margin-bottom: 0.3rem;
   text-align: center;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.3rem;
 }
 .growth-card {
   background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 8px;
   padding: 0.7rem;
   text-align: center;
@@ -3373,7 +3745,7 @@ TradFi增长限制：
 <div class="risk-matrix-container">
 <div class="matrix-title">风险矩阵图</div>
 <div class="risk-matrix">
-<img src="risk_matrix_chart.svg" alt="风险矩阵图" style="width: 100%; height: 100%;">
+<img src="risk-matrix-zh.svg" alt="风险矩阵图" style="width: 100%; height: 100%;">
 </div>
 </div>
 
@@ -3783,7 +4155,7 @@ TradFi增长限制：
 }
 .strategy-card {
   background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 6px;
   padding: 0.5rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -3801,8 +4173,6 @@ TradFi增长限制：
   font-size: 1.05em;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 .strategy-card.conservative h3 { color: var(--success-color); }
 .strategy-card.balanced h3 { color: var(--warning-color); }
@@ -3820,9 +4190,7 @@ TradFi增长限制：
   align-items: center;
   margin: 0.2rem 0;
   padding: 0.15rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.allocation-item:last-child { border-bottom: none; }
 .allocation-label {
   font-size: 0.95em;
   opacity: 0.9;
@@ -4160,39 +4528,39 @@ DeFi结构化产品的未来发展方向：
 }
 .timeline-phase {
   background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 6px;
   padding: 0.5rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   position: relative;
 }
+.timeline-phase.past {
+  border-color: #6b7280;
+  box-shadow: 0 3px 10px rgba(107, 114, 128, 0.2);
+  opacity: 0.85;
+}
 .timeline-phase.current {
   border-color: var(--success-color);
-  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.08));
 }
 .timeline-phase.near {
   border-color: var(--info-color);
   box-shadow: 0 3px 10px rgba(33, 150, 243, 0.2);
-}
-.timeline-phase.mid {
-  border-color: var(--warning-color);
-  box-shadow: 0 3px 10px rgba(255, 152, 0, 0.2);
 }
 .timeline-phase.future {
   border-color: var(--purple-color);
   box-shadow: 0 3px 10px rgba(156, 39, 176, 0.2);
 }
 .timeline-phase h4 {
-  margin: 0 0 0.3rem 0;
-  font-size: 1.3em;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.2em;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
+.timeline-phase.past h4 { color: #9ca3af; }
 .timeline-phase.current h4 { color: var(--success-color); }
 .timeline-phase.near h4 { color: var(--info-color); }
-.timeline-phase.mid h4 { color: var(--warning-color); }
 .timeline-phase.future h4 { color: var(--purple-color); }
 .timeline-phase strong {
   display: block;
@@ -4210,7 +4578,7 @@ DeFi结构化产品的未来发展方向：
 
 .innovations {
   background: linear-gradient(135deg, rgba(241, 196, 15, 0.15), rgba(241, 196, 15, 0.05));
-  border: 3px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   border-radius: 6px;
   padding: 0.6rem;
   font-size: 0.8em;
@@ -4222,8 +4590,6 @@ DeFi结构化产品的未来发展方向：
   color: var(--accent-color);
   font-weight: 700;
   text-align: center;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(241, 196, 15, 0.3);
 }
 .innovations ol {
   line-height: 1.5;
@@ -4242,50 +4608,50 @@ DeFi结构化产品的未来发展方向：
 
 <div class="trend-container">
 <div class="timeline">
+<div class="timeline-phase past">
+
+#### 2024-25
+基础建设
+<p>• 跨链成熟</p>
+<p>• RWA协议上线</p>
+<p>• AI工具萌芽</p>
+
+</div>
 <div class="timeline-phase current">
 
-#### 2024
+#### 2026
 当前状态
-<p>• 独立协议</p>
-<p>• 基础AMM</p>
-<p>• 简单分层</p>
+<p>• AI驱动策略</p>
+<p>• RWA-DeFi整合</p>
+<p>• 监管框架形成</p>
 
 </div>
 <div class="timeline-phase near">
 
-#### 2025
-互操作性
-<p>• 跨链桥接</p>
-<p>• 统一流动性</p>
-<p>• 复杂结构化</p>
-
-</div>
-<div class="timeline-phase mid">
-
-#### 2026
-AI集成
-<p>• AI风险管理</p>
-<p>• 预测市场</p>
-<p>• 自动策略</p>
+#### 2027
+机构浪潮
+<p>• TradFi大规模入场</p>
+<p>• 合规DeFi产品</p>
+<p>• TVL目标$100B+</p>
 
 </div>
 <div class="timeline-phase future">
 
-#### 2027+
-量子安全
-<p>• 抗量子加密</p>
-<p>• 完全去中心化</p>
-<p>• 自主协议</p>
+#### 2028+
+主流化
+<p>• TradFi完全融合</p>
+<p>• 抗量子协议</p>
+<p>• 全球零售准入</p>
 
 </div>
 </div>
 
 <div class="innovations">
 
-### 产品创新方向
-1. 混合型结构化产品：TradFi资产 + DeFi机制
-2. 个性化收益产品：基于用户风险画像定制
-3. 机构级DeFi基础设施：KYC/AML集成
+### 2026年创新焦点
+1. AI风险引擎：实时动态收益优化
+2. RWA结构化产品：国债与房地产代币化分层
+3. 合规DeFi基础设施：MiCA合规、机构级架构
 
 </div>
 </div>
@@ -4528,21 +4894,21 @@ DeFi结构化产品的价值主张：
 
 <style scoped>
 .summary-container {
-  max-width: 85%;
-  margin: 0.3rem auto 0 auto;
+  max-width: 94%;
+  margin: 0 auto;
 }
 .insight-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-  margin-bottom: 0.6rem;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
 }
 .insight {
   background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 6px;
-  padding: 0.6rem;
-  font-size: 0.85em;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.75em;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 .insight.tech {
@@ -4562,12 +4928,10 @@ DeFi结构化产品的价值主张：
   box-shadow: 0 3px 10px rgba(255, 152, 0, 0.2);
 }
 .insight h4 {
-  margin: 0 0 0.35rem 0;
-  font-size: 1.1em;
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05em;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 .insight.tech h4 { color: var(--info-color); }
 .insight.regulation h4 { color: #95A5A6; }
@@ -4575,36 +4939,34 @@ DeFi结构化产品的价值主张：
 .insight.risk h4 { color: var(--warning-color); }
 .insight p {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.35;
   opacity: 0.9;
-  font-size: 1em;
+  font-size: 0.95em;
   text-align: center;
 }
 
 .recommendations {
   background: linear-gradient(135deg, rgba(241, 196, 15, 0.15), rgba(241, 196, 15, 0.05));
-  border: 3px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   border-radius: 6px;
-  padding: 0.6rem;
-  font-size: 0.85em;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.82em;
   box-shadow: 0 3px 10px rgba(241, 196, 15, 0.2);
 }
 .recommendations h3 {
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.3rem 0;
   font-size: 1.1em;
   font-weight: 700;
   color: var(--accent-color);
   text-align: center;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid rgba(241, 196, 15, 0.3);
 }
 .recommendations ol {
-  margin: 0.3rem 0;
-  padding-left: 1.5em;
-  line-height: 1.6;
+  margin: 0.2rem 0;
+  padding-left: 1.3em;
+  line-height: 1.45;
 }
 .recommendations li {
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
   font-size: 1em;
 }
 .recommendations strong {
@@ -4644,9 +5006,9 @@ DeFi结构化产品的价值主张：
 <div class="recommendations">
 
 ### 战略建议
-1. 短期（6-12个月）：小规模试点，建立评估框架
-2. 中期（1-3年）：增加DeFi配置，开发混合产品
-3. 长期（3-5年）：构建完整产品矩阵，实现融合
+1. **短期（6-12月）：** 小规模试点，建立评估框架
+2. **中期（1-3年）：** 扩大DeFi配置，探索RWA混合产品
+3. **长期（3-5年）：** 全面整合投资组合，实现TradFi-DeFi融合
 
 </div>
 </div>
@@ -4951,7 +5313,7 @@ Pendle:收益代币化平台
 }
 .qa-card {
   background: linear-gradient(135deg, rgba(45, 91, 255, 0.15), rgba(45, 91, 255, 0.05));
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 6px;
   padding: 0.5rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -5001,8 +5363,6 @@ Pendle:收益代币化平台
   font-size: 1.05em;
   font-weight: 700;
   margin-bottom: 0.3rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 .qa-card.tech .qa-question { color: var(--danger-color); }
 .qa-card.regulation .qa-question { color: var(--info-color); }
@@ -5065,66 +5425,45 @@ Pendle:收益代币化平台
 <style scoped>
 .contact-container {
   text-align: center;
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
-}
-.contact-title {
-  font-size: 2.2em;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, white 0%, var(--accent-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.contact-subtitle {
-  font-size: 1.3em;
-  margin-bottom: 1.5rem;
-  color: var(--accent-color);
-  font-weight: 600;
-}
-.contact-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 2.5rem;
-  align-items: start;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contact-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: center;
+  height: 80%;
+}
+.contact-title {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.contact-subtitle {
+  font-size: 1.15em;
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-style: italic;
 }
 .section-title {
   color: var(--accent-color);
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.1em;
   letter-spacing: 0.05em;
   text-align: center;
-  white-space: nowrap;
-}
-.email-display {
-  background: rgba(45, 91, 255, 0.08);
-  border: 1px solid rgba(45, 91, 255, 0.3);
-  border-radius: 8px;
-  padding: 0.9rem 1.3rem;
-  font-size: 1.05em;
-  color: white;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
 }
 .qrcode-image {
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgba(241, 196, 15, 0.3);
+  width: 180px;
+  height: 180px;
+  border: 1px solid var(--border-default);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   background: white;
-  padding: 8px;
+  padding: 10px;
 }
 </style>
 
@@ -5132,19 +5471,8 @@ Pendle:收益代币化平台
 <div class="contact-title">感谢聆听</div>
 <div class="contact-subtitle">期待与您进一步交流</div>
 
-<div class="contact-info">
-<!-- 左侧：邮箱联系 -->
-<div class="contact-section">
-<div class="section-title">联系方式</div>
-<div class="email-display">huajie.zeng@gmail.com</div>
-</div>
-
-<!-- 右侧：微信公众号 -->
-<div class="contact-section">
-<div class="section-title">关注微信公众号</div>
-<img src="erweima.jpg" alt="微信公众号二维码" class="qrcode-image">
-</div>
-</div>
+<div class="section-title">扫码联系</div>
+<img src="qrcode.jpg" alt="微信公众号二维码" class="qrcode-image">
 </div>
 
 ---
